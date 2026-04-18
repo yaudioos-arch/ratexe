@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: ratexe
+    env: node
+    plan: starter
+    root: .
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true

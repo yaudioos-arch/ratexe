@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ratexe Chat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="server-sidebar">
+      <button class="server-icon active">R</button>
+      <button class="server-icon">+</button>
+    </aside>
+
+    <div class="workspace">
+      <div class="guild-bar">
+        <div class="workspace-header">Ratexe</div>
+        <div class="section-title">TEXT CHANNELS</div>
+        <button class="channel-button active"># random</button>
+        <button class="channel-button"># music</button>
+        <button class="channel-button"># movies</button>
+        <button class="channel-button"># games</button>
+      </div>
+
+      <main class="content">
+        <div class="top-bar">
+          <div>
+            <h1>Random Chat</h1>
+            <p>Anonymous conversations with strangers.</p>
+          </div>
+          <div class="server-actions">
+            <button id="themeButton">Light Mode</button>
+          </div>
+        </div>
+
+        <div class="chat-area">
+          <aside class="chat-sidebar">
+            <div class="panel panel-card">
+              <div class="panel-title">Connection</div>
+              <div class="settings">
+                <input id="nicknameInput" placeholder="Nickname" maxlength="20" value="Guest" />
+                <select id="topicSelect">
+                  <option value="random">Random topic</option>
+                  <option value="music">Music</option>
+                  <option value="movies">Movies</option>
+                  <option value="games">Gaming</option>
+                  <option value="travel">Travel</option>
+                  <option value="food">Food</option>
+                </select>
+              </div>
+              <div class="button-row">
+                <button id="startButton">Start</button>
+                <button id="nextButton" disabled>Next</button>
+              </div>
+              <div class="button-row">
+                <button id="leaveButton" disabled>Leave</button>
+                <button id="clearButton">Clear</button>
+              </div>
+              <div id="status" class="status">Ready to connect.</div>
+              <div class="partner-label">Partner: <span id="partnerLabel">—</span></div>
+            </div>
+
+            <div class="panel panel-card">
+              <div class="panel-title">Voice & Files</div>
+              <div class="extra-toolbar">
+                <input id="fileInput" type="file" />
+                <button id="sendFileButton" disabled>Send File</button>
+              </div>
+              <div class="extra-toolbar">
+                <button id="recordButton" disabled>Record</button>
+                <button id="sendVoiceButton" disabled>Send Voice</button>
+              </div>
+              <div id="voiceStatus" class="voice-status">Ready to record voice.</div>
+            </div>
+          </aside>
+
+          <section class="chat-main panel-card">
+            <div id="messages" class="messages"></div>
+            <div id="typingIndicator" class="typing-indicator"></div>
+
+            <div class="panel panel-card gif-card" id="gifPanelCard">
+              <div class="gif-panel">
+                <input id="gifSearchInput" placeholder="Search GIFs..." autocomplete="off" />
+                <button id="gifSearchButton">Search GIF</button>
+                <button id="gifToggleButton" class="toggle-gif-button" type="button">Hide GIFs</button>
+              </div>
+              <div id="gifResults" class="gif-results"></div>
+            </div>
+
+            <div class="composer">
+              <input id="messageInput" placeholder="Type your message..." disabled autocomplete="off" />
+              <button id="sendButton" disabled>Send</button>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>

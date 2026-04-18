@@ -1,0 +1,16 @@
+{
+  "name": "ratexe",
+  "version": "0.1.0",
+  "description": "Minimal Omegle-like random chat web app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.4",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "socket.io-client": "^4.8.3"
+  }
+}
